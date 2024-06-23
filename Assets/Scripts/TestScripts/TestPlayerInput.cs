@@ -10,6 +10,7 @@ namespace TestScripts
     {
         [SerializeField]
         private float moveSpeed;
+        
         private Rigidbody2D? _rigidbody;
 
         private void Start()
