@@ -6,7 +6,7 @@ namespace TestScripts
      *
      * 
      */
-    public class PlayerState : MonoBehaviour
+    public class PlayerState
     {
         /**
          *
@@ -14,13 +14,17 @@ namespace TestScripts
          */
         public uint Stability
         {
-            get
-            {
-                return _stability;
-            }
+            get => _stability;
             set => _stability -= value;
         }
 
+        /**
+         *
+         * 
+         */
+        public Deck Deck { get => _deck; set => _deck = value; }
+
         private uint _stability;
+        private Deck _deck;
     }
 }

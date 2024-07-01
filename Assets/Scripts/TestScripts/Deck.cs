@@ -6,8 +6,16 @@ using UnityEngine;
 
 namespace TestScripts
 {
+    /**
+     *
+     * 
+     */
     public class Deck
     {
+        /**
+         *
+         * 
+         */
         public Stack<Card> CurrentCards
         {
             get
@@ -18,6 +26,10 @@ namespace TestScripts
             private set => _currentCards = value;
         }
 
+        /**
+         *
+         * 
+         */
         public List<Card> DiscardPile
         {
             get
@@ -28,6 +40,10 @@ namespace TestScripts
             private set => _discardPile = value;
         }
 
+        /**
+         *
+         * 
+         */
         public Hand Hand { get => _hand; private set => _hand = value; }
 
         [Tooltip("Used to draw the initial hand that we will use"), Range(1, 10)]
@@ -44,6 +60,10 @@ namespace TestScripts
             DrawCards((int)StartingHandSize);
         }
 
+        /**
+         *
+         * 
+         */
         public void FillWithRandomCardsFromPool(List<Card> cardPool, int cardsToTake)
         {
             if (!cardPool.Any() || cardPool.Count < cardsToTake)
@@ -56,7 +76,11 @@ namespace TestScripts
                 .Take(cardsToTake));
         }
 
-        public void DrawCards(int NumberOfCardsToDraw)
+        /**
+         *
+         * 
+         */
+        public void DrawCards(int numberOfCardsToDraw)
         {
             if (!CurrentCards.Any())
             {
@@ -64,15 +88,38 @@ namespace TestScripts
                 DiscardPile.Clear();
             }
 
-            if (NumberOfCardsToDraw > CurrentCards.Count)
+            if (numberOfCardsToDraw > CurrentCards.Count)
             {
-                NumberOfCardsToDraw = CurrentCards.Count;
+                numberOfCardsToDraw = CurrentCards.Count;
             }
 
-            for (int i = 0; i < NumberOfCardsToDraw; i++)
+            for (int i = 0; i < numberOfCardsToDraw; i++)
             {
                 Hand.AddCard(CurrentCards.Pop());
             }
         }
+
+        /**
+         *
+         * 
+         */
+        public void UseCard(int index)
+        {
+            _discardPile?.Add(Hand.CurrentCards.ElementAt(index));
+            Hand.UseCard(index);
+        }
+
+        public void ShuffleRemaining()
+        {
+            CurrentCards.Shuffle();
+        }
+
+        public void ShuffleBackDiscardAndDeck()
+        {
+            _discardPile.ForEach(card => CurrentCards.Push(card));
+            _discardPile.Clear();
+            ShuffleRemaining();
+        }
+        
     }
 }

@@ -22,6 +22,7 @@ namespace TestScripts
         }
 
         public CardType CardType { get => cardType; private set => cardType = value; }
+        public bool IsUsable => CardBattleManager.instance.CurrentPhase == TurnPhase.Player;
 
         [SerializeField]
         private int cardValue;
