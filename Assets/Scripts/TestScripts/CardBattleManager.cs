@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -62,6 +63,9 @@ namespace TestScripts
             
             _enemyState = new PlayerState();
             _enemyState.Deck = enemyDeck;
+
+            var enumerator = PlayerData.SetCountry();
+            var data = enumerator.Current;
         }
 
         private void Update()
