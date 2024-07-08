@@ -18,6 +18,12 @@ namespace TestScripts
             set => _stability -= value;
         }
 
+        public int Forthcoming
+        {
+            get => _forthcoming;
+            set => _forthcoming += value;
+        }
+
         /**
          *
          * 
@@ -25,6 +31,7 @@ namespace TestScripts
         public Deck Deck { get => _deck; set => _deck = value; }
 
         private uint _stability;
+        private int _forthcoming;
         private Deck _deck;
     }
 }
