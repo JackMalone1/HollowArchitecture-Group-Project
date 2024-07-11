@@ -361,7 +361,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835246515}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &835246517
 Camera:
   m_ObjectHideFlags: 0
@@ -675,7 +675,7 @@ MonoBehaviour:
   portraitAnimator: {fileID: 0}
   displayNameText: {fileID: 0}
   isDialoguePlaying: 1
-  inkJSONAsset: {fileID: 4900000, guid: a51a8294e7808184f8bf62b81d419556, type: 3}
+  inkJSONAsset: {fileID: 4900000, guid: 288b37d4de71b7a44be9ffe2304ab9fa, type: 3}
   canvas: {fileID: 71186073}
   textPrefab: {fileID: 11456674, guid: 9cdc6e6e04ae99440bfb4f7c4b5dc009, type: 3}
   buttonPrefab: {fileID: 11455116, guid: 3a0030d32abf87e40b169e41e3910f6d, type: 3}
