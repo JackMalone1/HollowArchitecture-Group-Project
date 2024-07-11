@@ -75,6 +75,8 @@ namespace TestScripts
 				// Display the text on screen!
 				CreateContentView(text);
 				HandleTags(story.currentTags);
+				
+				
 			}
 
 			// Display all the choices, if there are any!
@@ -140,6 +142,7 @@ namespace TestScripts
 			storyText.text = text;
 			storyText.transform.SetParent (canvas.transform, false);
 		}
+
 
 		// Creates a button showing the choice text
 		Button CreateChoiceView (string text) {

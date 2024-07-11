@@ -6,11 +6,11 @@ Your first witness sits with their scrawny limbs gaggling all over the stool. Th
 
 
 == Intro1 ==
-Your parent asked me to help find out what happened to your friend, but I'm new in town and I don't know everyone yet. What's your name? #speaker : Player
+Your parent asked me to help find out what happened to your friend, but I'm new in town and I don't know everyone yet. What's your name? #speaker:Player
 ->Introtruth
 
 == Introtruth ==
-I'm Ype. But Enge has been gone for weeks, I don't think you'll find them. #speaker:Ype
+I'm Ype. But Enge has been gone for weeks, I don't think you'll find them. 
 ->When
 
 == Intro2 ==
