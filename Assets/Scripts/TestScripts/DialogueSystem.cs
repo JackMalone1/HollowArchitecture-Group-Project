@@ -73,8 +73,9 @@ namespace TestScripts
 				// This removes any white space from the text.
 				text = text.Trim();
 				// Display the text on screen!
-				CreateContentView(text);
 				HandleTags(story.currentTags);
+				CreateContentView(text);
+				
 				
 				
 			}
@@ -119,6 +120,11 @@ namespace TestScripts
 				{
 					case SPEAKER_TAG:
 						displayNameText.text = tagValue;
+						string text = tagValue;
+						// This removes any white space from the text.
+						text = text.Trim();
+						// Display the text on screen!
+						CreateContentView(text);
 						break;
 					case PORTRAIT_TAG:
 						portraitAnimator.Play(tagValue);
