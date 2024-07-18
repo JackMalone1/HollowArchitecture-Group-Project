@@ -7,20 +7,14 @@ using UnityEngine.Serialization;
 
 namespace TestScripts
 {
-    /**
-     *
-     * 
-     */
+
     public enum TurnPhase
     {
         Player,
         Enemy
     }
     
-    /**
-     *
-     * 
-     */
+
     public class CardBattleManager : MonoBehaviour
     {
         public static CardBattleManager instance;
@@ -28,13 +22,17 @@ namespace TestScripts
         private void Awake()
         {
             instance = this;
+            DialogueSystem.GetInstance().StopStory();
         }
 
-        /**
-         *
-         * 
-         */
+
         public TurnPhase CurrentPhase { get => currentPhase; private set => currentPhase = value; }
+
+        public GameObject card;
+
+        public GameObject CardHolder;
+
+        public Transform cardLocation;
 
         [SerializeField]
         private TurnPhase currentPhase;
@@ -42,6 +40,9 @@ namespace TestScripts
         private PlayerState _playerState;
         
         private PlayerState _enemyState;
+
+        private List<CardDisplay> _playerHand = new List<CardDisplay>();
+        private List<CardDisplay> _enemyHand = new List<CardDisplay>();
 
         private void Start()
         {
@@ -66,20 +67,79 @@ namespace TestScripts
 
             var enumerator = PlayerData.SetCountry();
             var data = enumerator.Current;
+            
+            HandlePhase();
         }
 
-        private void Update()
+        void HandlePhase()
         {
-            if (Input.GetMouseButton(0))
+            switch (currentPhase)
             {
-                AdvancePhase();
+                case TurnPhase.Player:
+                    PlayerTurn();
+                    break;
+                case TurnPhase.Enemy:
+                    EnemyTurn();
+                    break;
             }
         }
 
-        /**
-         *
-         * 
-         */
+        private void PlayerTurn()
+        {
+            foreach (Transform transform in CardHolder.transform)
+            {
+                UnityEngine.Object.Destroy(transform.gameObject);
+            }
+
+            Transform cardLocation = null;
+            _playerState.Deck.DrawCards(2);
+            var playerHand = _playerState.Deck.Hand;
+            _playerHand.Clear();
+            foreach (var cardInHand in playerHand.CurrentCards)
+            {
+                var cardDisplay = Instantiate(card, CardHolder.transform);
+                if (cardLocation == null)
+                {
+                    cardLocation = cardDisplay.transform;
+                }
+                var position = cardLocation.position;
+                CardDisplay comp = cardDisplay.GetComponent<CardDisplay>();
+                comp.card = cardInHand;
+                comp.UpdateDisplay();
+                position = new Vector3(position.x - .75f, position.y,
+                    position.z);
+                cardLocation.position = position;
+            }
+        }
+
+        private void EnemyTurn()
+        {
+            foreach (Transform transform in CardHolder.transform)
+            {
+                UnityEngine.Object.Destroy(transform.gameObject);
+            }
+
+            Transform cardLocation = null;
+            _enemyState.Deck.DrawCards(2);
+            var enemyHand = _enemyState.Deck.Hand;
+            _enemyHand.Clear();
+            foreach (var cardInHand in enemyHand.CurrentCards)
+            {
+                var cardDisplay = Instantiate(card, CardHolder.transform);
+                if (cardLocation == null)
+                {
+                    cardLocation = cardDisplay.transform;
+                }
+                var position = cardLocation.position;
+                CardDisplay comp = cardDisplay.GetComponent<CardDisplay>();
+                comp.card = cardInHand;
+                comp.UpdateDisplay();
+                position = new Vector3(position.x - .75f, position.y,
+                    position.z);
+                cardLocation.position = position;
+            }
+        }
+
         public void AdvancePhase()
         {
             currentPhase++;
@@ -89,23 +149,8 @@ namespace TestScripts
                 currentPhase = 0;
             }
             
-            switch (currentPhase)
-            {
-                case TurnPhase.Player:
-                    break;
-                case TurnPhase.Enemy:
-                    AdvancePhase();
-                    break;
-            }
+            HandlePhase();
         }
-
-        /**
-         *
-         * 
-         */
-        public void EndPlayerTurn()
-        {
-            AdvancePhase();
-        }
+        
     }
 }
