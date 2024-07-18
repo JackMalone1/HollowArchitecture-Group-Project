@@ -73,8 +73,11 @@ namespace TestScripts
 				// This removes any white space from the text.
 				text = text.Trim();
 				// Display the text on screen!
-				CreateContentView(text);
 				HandleTags(story.currentTags);
+				CreateContentView(text);
+				
+				
+				
 			}
 
 			// Display all the choices, if there are any!
@@ -117,6 +120,11 @@ namespace TestScripts
 				{
 					case SPEAKER_TAG:
 						displayNameText.text = tagValue;
+						string text = tagValue;
+						// This removes any white space from the text.
+						text = text.Trim();
+						// Display the text on screen!
+						CreateContentView(text);
 						break;
 					case PORTRAIT_TAG:
 						portraitAnimator.Play(tagValue);
@@ -140,6 +148,7 @@ namespace TestScripts
 			storyText.text = text;
 			storyText.transform.SetParent (canvas.transform, false);
 		}
+
 
 		// Creates a button showing the choice text
 		Button CreateChoiceView (string text) {
