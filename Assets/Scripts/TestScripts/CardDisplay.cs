@@ -14,7 +14,7 @@ namespace TestScripts
 
         public Image image;
 
-        public void UpdateDisplay()
+        public void UpdateDisplay(TurnPhase currentPhase, int cardIndex)
         {
             image.sprite = card.Sprite;
             var canvas = transform.GetChild(0);
@@ -26,8 +26,11 @@ namespace TestScripts
                 name.text = card.CardType.GetDescription();
             }
 
-            var button = canvas.GetChild(3).GetComponent<Button>();
-            button.onClick.AddListener(delegate { CardBattleManager.instance.AdvancePhase(); });
+            if (currentPhase == TurnPhase.Player)
+            {
+                var button = canvas.GetChild(3).GetComponent<Button>();
+                button.onClick.AddListener(delegate { CardBattleManager.instance.PlayerUseCard(cardIndex); });
+            }
         }
 
         public void ChangePhase()

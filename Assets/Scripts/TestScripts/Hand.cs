@@ -5,16 +5,8 @@ using System.Linq;
 
 namespace TestScripts
 {
-    /**
-     *
-     * 
-     */
     public class Hand
     {
-        /**
-         *
-         * 
-         */
         public List<Card> CurrentCards
         {
             get
@@ -26,20 +18,12 @@ namespace TestScripts
         }
         
         private List<Card> _currentCards = new();
-
-        /**
-         *
-         * 
-         */
+        
         public void AddCard(Card card)
         {
             CurrentCards.Add(card);
         }
-
-        /**
-         *
-         * 
-         */
+        
         public void UseCard(int index)
         {
             bool exists = CurrentCards.ElementAt(index) != null;
