@@ -127,6 +127,7 @@ namespace TestScripts
         {
             _playerState.Deck.UseCard(index);
             Card card = _playerState.Deck.Hand.CurrentCards.ElementAt(index);
+            //use card here
             AdvancePhase();
         }
 
@@ -173,6 +174,7 @@ namespace TestScripts
             int cardToUse = Random.Range(0, enemyHand);
             Card card = _enemyState.Deck.Hand.CurrentCards.ElementAt(cardToUse);
             _enemyState.Deck.UseCard(cardToUse);
+            //use card here
             AdvancePhase();
         }
 
