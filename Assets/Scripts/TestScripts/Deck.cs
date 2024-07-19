@@ -6,16 +6,9 @@ using UnityEngine;
 
 namespace TestScripts
 {
-    /**
-     *
-     * 
-     */
     public class Deck
     {
-        /**
-         *
-         * 
-         */
+
         public Stack<Card> CurrentCards
         {
             get
@@ -25,11 +18,7 @@ namespace TestScripts
             }
             private set => _currentCards = value;
         }
-
-        /**
-         *
-         * 
-         */
+        
         public List<Card> DiscardPile
         {
             get
@@ -39,11 +28,7 @@ namespace TestScripts
             }
             private set => _discardPile = value;
         }
-
-        /**
-         *
-         * 
-         */
+        
         public Hand Hand { get => _hand; private set => _hand = value; }
 
         [Tooltip("Used to draw the initial hand that we will use"), Range(1, 10)]
@@ -59,11 +44,7 @@ namespace TestScripts
             CurrentCards = new Stack<Card>(deckList);
             DrawCards((int)StartingHandSize);
         }
-
-        /**
-         *
-         * 
-         */
+        
         public void FillWithRandomCardsFromPool(List<Card> cardPool, int cardsToTake)
         {
             if (!cardPool.Any() || cardPool.Count < cardsToTake)
@@ -75,11 +56,7 @@ namespace TestScripts
                 .OrderBy(card => Random.value)
                 .Take(cardsToTake));
         }
-
-        /**
-         *
-         * 
-         */
+        
         public void DrawCards(int numberOfCardsToDraw)
         {
             if (!CurrentCards.Any())
@@ -98,11 +75,7 @@ namespace TestScripts
                 Hand.AddCard(CurrentCards.Pop());
             }
         }
-
-        /**
-         *
-         * 
-         */
+        
         public void UseCard(int index)
         {
             _discardPile?.Add(Hand.CurrentCards.ElementAt(index));

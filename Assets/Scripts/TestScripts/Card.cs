@@ -1,14 +1,19 @@
 #nullable enable
 
+using System.ComponentModel;
 using UnityEngine;
 
 namespace TestScripts
 {
     public enum CardType
     {
+        [Description("Influence")]
         Influence,
+        [Description("Reflect")]
         Reflect,
+        [Description("Protect")]
         Protect,
+        [Description("Unique")]
         Unique
     }
     
@@ -21,6 +26,8 @@ namespace TestScripts
             private set => cardValue = value;
         }
 
+        public Sprite? Sprite { get => sprite; set => sprite = value; }
+
         public CardType CardType { get => cardType; private set => cardType = value; }
         public bool IsUsable => CardBattleManager.instance.CurrentPhase == TurnPhase.Player;
 
@@ -29,5 +36,8 @@ namespace TestScripts
 
         [SerializeField]
         private CardType cardType;
+
+        [SerializeField]
+        private Sprite? sprite;
     }
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardValue: 0
   cardType: 0
+  sprite: {fileID: 21300000, guid: 678095381d851334fb550c5032ba1a81, type: 3}

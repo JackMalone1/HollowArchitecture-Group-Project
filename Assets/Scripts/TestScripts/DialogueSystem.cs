@@ -48,6 +48,11 @@ namespace TestScripts
 		    return instance;
 	    }
 
+	    public void StopStory()
+	    {
+		    RemoveChildren();
+	    }
+
 		// Creates a new Story object with the compiled story which we can then play!
 		void StartStory () {
 			story = new Story (inkJSONAsset.text);
