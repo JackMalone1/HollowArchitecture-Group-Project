@@ -20,6 +20,7 @@ namespace TestScripts
         [SerializeField] private TextAsset loadGlobalsJSON;
         
         [Header("Dialogue UI")]
+		[SerializeField] private GameObject dialoguePanel;
         [SerializeField] private Animator portraitAnimator;
         [SerializeField] private TextMeshProUGUI displayNameText;
         

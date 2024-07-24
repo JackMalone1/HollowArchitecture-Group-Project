@@ -1,17 +1,64 @@
 === mutant_introduction ===
-As you go back outside, the village seems even more deserted than as when you had just arrived. What you now know to be a 'variant', seems to be roughly where you had left them before you had gone inside. They seem even more inept than last time, which has to be some kind of achievement that they could have anything to do with what happened to that kid.
+You go back outside. The village is even more deserted than when you arrived. 
+The VARIANT is still standing where you left them, eyes gazing at nothing in particular. With a vacant expression like that, surely they can't be intelligent enough to be involved in the kidnapping...can they?
++[Hey, can I ask you some questions?]
 -> mutant_dialogue
 
-VAR MUTANT = 3
-=== mutant_dialogue ===
-#speaker:You
-'Would I be able to ask you a few questions about the girl that's recently gone missing around here?'
-#speaker:Variant
-* 'Are you working with the people from the town so you can drive the rest of us out of here?'
-  You get an air of disdain towards you that. They're not too keen with talking with people around here.
-  #speaker:You
-** 'I'm not going to try pin this on you if that's what you're thinking. The town seems to not like variants, do you have any more information about this?'
-    #speaker:Variant
-*** 'All I know is the witches at the edge of town have been trying to get rid of us for as long as I can remember. They're always trying to find new ways to try and get rid of us from around here, but this is our home too so we've been trying to do what we can to survive. That girl didn't like us much either, my bet is she's probably just gone working with them to drive me out.'
 
-->witch_introduction
+=== mutant_dialogue ===
+#speaker:YOU
+"Can I ask you a few questions about the girl that's recently gone missing around here?"
+#speaker:VARIANT
+"Are you working with the people from the town so you can drive the rest of us out of here?"
+The Variant seems CONFIDENT and HOSTILE.
++[Be friendly]
+-> variant_info_right
++[Be accusatory]
+-> variant_info_wrong
+
+=== variant_info_right ===
+#speaker:YOU
+"I have no judgements about this place and I'm not trying to pin this on you."
+#speaker:VARIANT
+"You'd be the first. The town has been trying to get rid of us forever, but this is our home too so we're just doing what we can to survive. That girl and her witch friends didn't like us much either."
++[Witches?]
+-> variant_info_2
+
+== variant_info_wrong ===
+#speaker:YOU 
+"The townspeople seem to think you could have something to do with the missing girl."
+#speaker:VARIANT 
+"Look at you, coming in all guns blazing. You know nothing about this place."
+
+The Variant doesn't trust you. Try again. 
++[Back off]
+-> variant_info_right
++[Stand your ground]
+#speaker:YOU 
+"The townspeople are terrified of you, they must have a good reason to be."
+#speaker:VARIANT 
+"They're just afraid of what they don't understand. Like you."
+-> variant_conclusion
+
+=== variant_info_2 ===
+#speaker:VARIANT 
+"A cult, more like. They're the ones stealing children."
+
+-> variant_conclusion
+
+=== variant_conclusion ===
+All these people hating each other and still living so close together. Was Lena really taken, or did she leave of her own accord?
+   { - variant_info_right:
+  
+    Sounds like the witches at the edge of town could have seen her recently.
+    
+    +[NEW WITNESS: Witch]
+        -> witch_introduction
+    - else:
+    This Variant doesn't want to talk to you anymore. 
+    
+    You haven't found any clues. Restart the conversation? 
+    +[Go back]
+        -> mutant_dialogue
+    }
+    
