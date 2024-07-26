@@ -23,7 +23,7 @@ You go to approach the stranger, but there is a sudden tight grip on your arm. A
 #speaker:WOMAN
 "You don't want to stay out in the town for too long, we can't have the person who's supposed to be finding my daughter getting snatched by a variant, can we?"
 She sounds DISTRESSED and SUSPICIOUS. 
-Choose correctly to gain her trust and valuable clues.
+Choose your next words wisely to gain her trust and valuable clues.
 +[Ask for more info]
 -> info_from_mother_wrong
 +[Be confident]
