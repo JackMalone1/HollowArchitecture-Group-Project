@@ -20,6 +20,8 @@ namespace TestScripts
         [SerializeField] private TextAsset loadGlobalsJSON;
         
         [Header("Dialogue UI")]
+		[SerializeField] private GameObject dialoguePanel;
+		[SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private Animator portraitAnimator;
         [SerializeField] private TextMeshProUGUI displayNameText;
         
@@ -149,9 +151,9 @@ namespace TestScripts
 
 		// Creates a textbox showing the the line of text
 		void CreateContentView (string text) {
-			Text storyText = Instantiate (textPrefab) as Text;
-			storyText.text = text;
-			storyText.transform.SetParent (canvas.transform, false);
+			Text dialogueText = Instantiate (textPrefab) as Text;
+			dialogueText.text = text;
+			dialogueText.transform.SetParent (canvas.transform, false);
 		}
 
 
