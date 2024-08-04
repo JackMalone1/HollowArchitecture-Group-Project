@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Ink.Runtime;
 using TMPro;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 

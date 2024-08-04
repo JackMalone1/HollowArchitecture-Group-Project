@@ -8,5 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Tess/Intro/IntroDialogue.unity
+    guid: a4b41236ad972824dbbc7c05228595d0
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2b310cf2ffafa444586581b11aaa5d66, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 34466bd268b85b242b595ef573268d9f, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 6da2fcf5bc87b8b43ab28be8567244b0, type: 2}

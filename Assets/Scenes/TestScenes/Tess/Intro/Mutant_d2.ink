@@ -16,7 +16,7 @@ The Variant seems CONFIDENT and HOSTILE.
 +[Be accusatory]
 -> variant_info_wrong
 
-=== variant_info_right ===
+=== variant_info_right === //clue:witness
 #speaker:YOU
 "I have no judgements about this place and I'm not trying to pin this on you."
 #speaker:VARIANT
@@ -44,6 +44,12 @@ The Variant doesn't trust you. Try again.
 #speaker:VARIANT 
 "A cult, more like. They're the ones stealing children."
 
+*[Stealing children?] -> variant_info_2A
+
+=== variant_info_2A ===
+#speaker:VARIANT 
+"Whatever, it's just a rumour. Go ask them about it - they live in the swamp like real savages. At least I have a proper house."
+
 -> variant_conclusion
 
 === variant_conclusion ===
@@ -52,7 +58,9 @@ All these people hating each other and still living so close together. Was Lena 
   
     Sounds like the witches at the edge of town could have seen her recently.
     
-    +[NEW WITNESS: Witch]
+    You have found 1/1 clue: 
+    PLACE: Swamp
+    +[NEW PLACE: Swamp]
         -> witch_introduction
     - else:
     This Variant doesn't want to talk to you anymore. 
