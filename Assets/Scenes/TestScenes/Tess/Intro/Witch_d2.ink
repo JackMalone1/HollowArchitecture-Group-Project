@@ -5,7 +5,6 @@ As you get to the edge of town, the buildings start to fade away and you're left
 
 
 === swamp_description ===
-
 From the few huts, you spot several which seem to have been broken into, left in a state of disarray.
 
 *The Oracle's Cabin
@@ -19,34 +18,35 @@ From the few huts, you spot several which seem to have been broken into, left in
 
 
 === oracle_cabin ===
-
 The workshop is stood above a particularly marshy area, connected to a patch of dry land by a rickety wooden bridge. Wind chimes made from bones and shells hang from the eaves, creating a haunting melody.
 
 You should come back here later to investigate. 
 
 *[Go back]
--> swamp_description
+-> witch_introduction
 
 === alchemist_workshop ===
-
-A ramshacked building created by what seems like salvaged wood and metal, it has several chimneys protruding from it's roof emitting shining and strange coloured smoke. You can peer just inside the window and notice complex mechs and machine dominate the space, with shelves of exotic ingredients lining the walls.
+A ramshackle building created by what seems like salvaged wood and metal, it has several chimneys protruding from it's roof emitting shining and strange coloured smoke. You can peer just inside the window and notice complex mechs and machine dominate the space, with shelves of exotic ingredients lining the walls.
 
 You should come back here later to investigate. 
+
 * [Go back]
--> swamp_description
+-> witch_introduction
 
 === summoners_lair ===
-
 You can see that the hut is made from a much darker wood than any of the other houses, with bones scattered throughout. Throughout the structure, there are charms and protections scratched into the building, practically being cramped in to every possible surface.
 
-You should come back here later to investigate. 
+You should come back here later to investigate.
+
 *[Go back]
--> swamp_description
-    Finally, in the middle of the swamp you see the Elder's hut standing. It is made from ancient, twisted trees and adorned with powerful wards and charms that you can sense, even from here. Inside, shelves have been overturned, books and scrolls scattered across the floor. The atmosphere is tense and foreboding, as if the very swamp itself holds its breath, waiting for what will happen next.
+-> witch_introduction
+
 -> witch_dialogue
 
 
 === witch_dialogue ===
+Finally, in the middle of the swamp you see the Elder's hut standing. It is made from ancient, twisted trees and adorned with powerful wards and charms that you can sense, even from here. Inside, shelves have been overturned, books and scrolls scattered across the floor. The atmosphere is tense and foreboding, as if the very swamp itself holds its breath, waiting for what will happen next.
+
 As you begin to move closer towards the Elder's hut, you see them emerge and start towards you.
 -> witch_dialogue_2
 
@@ -57,7 +57,7 @@ As you begin to move closer towards the Elder's hut, you see them emerge and sta
 
 The Elder sounds CURIOUS and SECRETIVE. 
 
-+[Comment on mess]
++[Small talk]
 #speaker:YOU 
 "Your hut appears to have seen better days."
 -> witch_info_right1
@@ -107,8 +107,12 @@ You should ask about the book.
     
 - else:
 *[Demand information]
+#speaker:YOU 
+"Tell me about the book."
 -> witch_info_wrong2
 +[Be curious]
+#speaker:YOU 
+"I've never been to a place so haunted by magic. Could the book be dangerous?"
 -> witch_info_right2
 }
 
@@ -118,8 +122,12 @@ You should ask about the book.
 
 === influence_witch_no ===
 *[Demand information]
+#speaker:YOU 
+"Tell me about the book."
 -> witch_info_wrong2
 +[Be curious]
+#speaker:YOU 
+"I've never been to a place so haunted by magic. Could the book be dangerous?"
 -> witch_info_right2
 
 === witch_info_wrong2 ===

@@ -1,15 +1,15 @@
 === mutant_introduction ===
 You go back outside. The village is even more deserted than when you arrived. 
 The VARIANT is still standing where you left them, eyes gazing at nothing in particular. With a vacant expression like that, surely they can't be intelligent enough to be involved in the kidnapping...can they?
-+[Hey, can I ask you some questions?]
++[Call out]
 -> mutant_dialogue
 
 
 === mutant_dialogue ===
 #speaker:YOU
-"Can I ask you a few questions about the girl that's recently gone missing around here?"
+"Hey! Can I talk to you?"
 #speaker:VARIANT
-"Are you working with the people from the town so you can drive the rest of us out of here?"
+"Huh. If you're working for the townspeople, no."
 The Variant seems CONFIDENT and HOSTILE.
 +[Be friendly]
 -> variant_info_right
@@ -18,7 +18,7 @@ The Variant seems CONFIDENT and HOSTILE.
 
 === variant_info_right === //clue:witness
 #speaker:YOU
-"I have no judgements about this place and I'm not trying to pin this on you."
+"I have no judgements about this place, I barely know anyone. Can I trust you?"
 #speaker:VARIANT
 "You'd be the first. The town has been trying to get rid of us forever, but this is our home too so we're just doing what we can to survive. That girl and her witch friends didn't like us much either."
 +[Witches?]
@@ -26,7 +26,7 @@ The Variant seems CONFIDENT and HOSTILE.
 
 == variant_info_wrong ===
 #speaker:YOU 
-"The townspeople seem to think you could have something to do with the missing girl."
+"The townspeople seem to think you have something to do with the missing girl."
 #speaker:VARIANT 
 "Look at you, coming in all guns blazing. You know nothing about this place."
 
@@ -53,6 +53,7 @@ The Variant doesn't trust you. Try again.
 -> variant_conclusion
 
 === variant_conclusion ===
+
 All these people hating each other and still living so close together. Was Lena really taken, or did she leave of her own accord?
    { - variant_info_right:
   

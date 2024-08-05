@@ -66,7 +66,6 @@ The villager doesn't trust you. Try again.
 The villager looks at the Elder.
 #speaker:VILLAGER
 "Do you trust this outsider?"
-
 { - villager_info_wrong1:
 +[Let the Elder speak] 
 #speaker:ELDER 
@@ -74,7 +73,7 @@ The villager looks at the Elder.
 -> villager_info_right2
 +[Prove yourself] 
 #speaker:YOU 
-"I have done nothing to warrant such suspicion! The girl is in danger - her mother asked me to help!"
+"I have done nothing to warrant such suspicion. The girl is in danger - her mother asked me to help!"
 -> villager_info_wrong2
     - else:
 +[Let the Elder speak]
@@ -83,7 +82,7 @@ The villager looks at the Elder.
 -> villager_info_right2
 +[Prove yourself] 
 #speaker:YOU 
-"I have done nothing to warrant such suspicion! The girl is in danger - her mother asked me to help!"
+"I have done nothing to warrant such suspicion. The girl is in danger - her mother asked me to help!"
 -> villager_info_wrong1
 }
 
@@ -91,6 +90,10 @@ The villager looks at the Elder.
 === villager_info_right2 === //clue:PLACE
 #speaker:VILLAGER 
 "Well honestly, I'm glad you came. I tried to follow them but the mist has become so thick I lost them and then I lost myself."
++[Continue]
+-> villager_info_right3
+
+=== villager_info_right3 ===
 #speaker:ELDER 
 "This is the path to the Altar. The ancient power surrounding it may be allowing them to hide within the mist..."
 -> villager_conclusion

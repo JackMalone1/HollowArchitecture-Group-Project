@@ -1,7 +1,7 @@
 === introduction ===
 You finally finish the 7-day trek through the woods to find yourself in front of the forgotten, dilapidated village. This village has been lost to time by the rest of the world; the people don't seem interested in interacting with the rest of the world. There seems to be nothing left of the simple life and joy that you were told existed here. The abominations have been too regular as of late it seems.
-*[Continue]
--> describe_villagers
+*[Continue] -> describe_villagers
+
 
 === describe_villagers ===
 The few villagers that are left appear to be living in a life of squalor.
@@ -27,6 +27,7 @@ Choose your next words wisely to gain her trust and valuable clues.
 +[Ask for more info]
 -> info_from_mother_wrong
 +[Be confident]
+#speaker:YOU 
 "I'm here to help you. Tell me about your daughter."
 -> info_from_mother_right
 
